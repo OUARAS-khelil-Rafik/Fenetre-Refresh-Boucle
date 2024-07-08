@@ -5,7 +5,8 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from plyer import notification
 
 # URL à ouvrir
-url = "https://aadl3inscription2024.dz/AR/Inscription-desktop.php"
+#url = "https://aadl3inscription2024.dz/AR/Inscription-desktop.php"
+url = "https://google.dz/"
 
 # Fonction pour initialiser le driver (Edge)
 def init_driver():
@@ -58,7 +59,7 @@ while True:
         
         # Vérifier le titre de la page jusqu'à ce qu'il soit le titre attendu
         while True:
-            if driver.title == "Plateforme AADL3 : Inscription":
+            if driver.title == "Google" """driver.title == "Plateforme AADL3 : Inscription" """:
                 print("Page chargée avec succès.")
                 notification_title = "Page chargée avec succès"
                 notification_message = "La page AADL3 Inscription est chargée avec succès."
@@ -66,7 +67,7 @@ while True:
                     title=notification_title,
                     message=notification_message,
                     app_name='Python Script',
-                    timeout=10  # Durée d'affichage de la notification en secondes
+                    timeout=20  # Durée d'affichage de la notification en secondes
                 )
                 
                 # Ajouter d'autres instructions ici sans fermer le navigateur
@@ -93,8 +94,9 @@ while True:
 # Vous pouvez continuer à interagir avec le navigateur ouvert
 
 # Par exemple, vous pouvez ajouter une attente pour garder le script actif
-while True:
-    time.sleep(10)  # Attente de 10 secondes avant de répéter une action ou autre
-
-# Vous pouvez choisir de fermer le navigateur plus tard avec driver.quit() lorsque vous avez terminé
-# driver.quit()
+try:
+    while True:
+        time.sleep(10)  # Attente de 10 secondes avant de répéter une action ou autre
+except KeyboardInterrupt:
+    # Vous pouvez choisir de fermer le navigateur avec driver.quit() lorsque vous avez terminé
+    driver.quit()
