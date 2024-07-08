@@ -1,3 +1,4 @@
+""" OUARAS Khelil Rafik """
 import time
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service as EdgeService
@@ -5,10 +6,9 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from plyer import notification
 
 # URL à ouvrir
-#url = "https://aadl3inscription2024.dz/AR/Inscription-desktop.php"
-url = "https://google.dz/"
+url = "https://aadl3inscription2024.dz/AR/Inscription-desktop.php" # Ici vous pouvez changer l'url
 
-# Fonction pour initialiser le driver (Edge)
+# Fonction pour initialiser le driver (with Edge)
 def init_driver():
     service = EdgeService(EdgeChromiumDriverManager().install())
     options = webdriver.EdgeOptions()
@@ -18,7 +18,7 @@ def init_driver():
     return driver
 
 """
-# Fonction pour initialiser le driver (Chrome)
+# Fonction pour initialiser le driver (with Chrome)
 def init_driver():
     service = ChromeService(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
@@ -29,7 +29,7 @@ def init_driver():
 """
 
 """
-# Fonction pour initialiser le driver (Firefox)
+# Fonction pour initialiser le driver (with Firefox)
 def init_driver():
     service = FirefoxService(GeckoDriverManager().install())
     options = webdriver.FirefoxOptions()
@@ -40,7 +40,7 @@ def init_driver():
 """
 
 """
-# Fonction pour initialiser le driver (Safari)
+# Fonction pour initialiser le driver (with Safari)
 def init_driver():
     options = webdriver.SafariOptions()
     driver = webdriver.Safari(options=options)
@@ -59,18 +59,17 @@ while True:
         
         # Vérifier le titre de la page jusqu'à ce qu'il soit le titre attendu
         while True:
-            if driver.title == "Google" """driver.title == "Plateforme AADL3 : Inscription" """:
+            if driver.title == "Plateforme AADL3 : Inscription" :
                 print("Page chargée avec succès.")
                 notification_title = "Page chargée avec succès"
                 notification_message = "La page AADL3 Inscription est chargée avec succès."
                 notification.notify(
                     title=notification_title,
                     message=notification_message,
-                    app_name='Python Script',
+                    app_name='Page chargée avec succès',
                     timeout=20  # Durée d'affichage de la notification en secondes
                 )
                 
-                # Ajouter d'autres instructions ici sans fermer le navigateur
                 time.sleep(10)  # Attente de 10 secondes avant de continuer
                 
                 break  # Sortir de la boucle intérieure si la page est chargée
@@ -86,17 +85,5 @@ while True:
         print(f"Erreur lors du chargement de la page: {e}")
         time.sleep(5)  # Attendre quelques secondes avant de réessayer
 
-# Ne pas fermer le navigateur ici pour maintenir la session ouverte
-
-# Vous pouvez ajouter d'autres instructions ici sans fermer le navigateur
-
-# Par défaut, le navigateur ne se fermera pas automatiquement à la fin du script
-# Vous pouvez continuer à interagir avec le navigateur ouvert
-
-# Par exemple, vous pouvez ajouter une attente pour garder le script actif
-try:
-    while True:
-        time.sleep(10)  # Attente de 10 secondes avant de répéter une action ou autre
-except KeyboardInterrupt:
-    # Vous pouvez choisir de fermer le navigateur avec driver.quit() lorsque vous avez terminé
-    driver.quit()
+# Vous pouvez choisir de fermer le navigateur avec driver.quit() lorsque vous avez terminé
+# driver.quit()
