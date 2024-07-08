@@ -1,15 +1,10 @@
-Voici le fichier `README.md` formaté en Markdown avec du code:
-
-```markdown
-# FRBoucle.py
-
 ## Description
 
 Ce script, développé par OUARAS Khelil Rafik, utilise Selenium pour automatiser l'ouverture et le rechargement d'une page web spécifique jusqu'à ce qu'elle soit chargée avec succès. Lorsqu'elle est chargée, une notification est envoyée pour informer l'utilisateur. Le script est configuré pour utiliser le navigateur Microsoft Edge par défaut, mais peut facilement être modifié pour utiliser d'autres navigateurs comme Chrome, Firefox, ou Safari.
 
 ## Prérequis
 
-- Python 3.x
+- Python 3.12.2
 - Selenium
 - webdriver-manager
 - plyer
@@ -90,6 +85,3 @@ Utilisez ce script de manière responsable et assurez-vous de respecter les term
 ## Auteur
 
 OUARAS Khelil Rafik
-```
-
-N'hésitez pas à adapter ce fichier `README.md` en fonction de vos besoins spécifiques et de tout autre détail pertinent que vous souhaitez ajouter.
